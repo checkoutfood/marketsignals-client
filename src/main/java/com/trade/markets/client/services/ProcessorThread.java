@@ -13,15 +13,16 @@ public class ProcessorThread {
 
 	public static void process(String url) throws IOException, InterruptedException {
 
+		Thread.sleep(2*1000);
 		System.out.println("Executing:" + url.substring(52));
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
 		HttpResponse response = client.execute(request);
-		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-		String line = "";
-		while ((line = rd.readLine()) != null) {
-			System.out.println(line);
-		}
+//		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+//		String line = "";
+//		while ((line = rd.readLine()) != null) {
+//			System.out.println(line);
+//		}
 
 	}
 }
